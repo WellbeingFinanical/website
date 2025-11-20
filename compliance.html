@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .compliance-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .compliance-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .compliance-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .compliance-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .compliance-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .compliance-section h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .compliance-section h3 {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .compliance-section p {
+            color: var(--text-light-grey);
+            margin-bottom: 1rem;
+        }
+        .compliance-section ul {
+            color: var(--text-light-grey);
+            padding-left: 2rem;
+            margin: 1rem 0;
+        }
+        .compliance-section li {
+            margin-bottom: 0.5rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .highlight-box {
+            background: rgba(188, 151, 110, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .compliance-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .compliance-card h4 {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .compliance-container {
+                padding: 1rem;
+            }
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="compliance-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="compliance-header">
+            <h1 class="compliance-title">Regulatory Compliance</h1>
+            <p class="compliance-subtitle">Wellbeing Financial operates in full compliance with Canadian financial regulations and privacy laws, ensuring your protection and our accountability.</p>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Canadian Financial Regulations</h2>
+            <p>As a Canadian fintech company, we operate under comprehensive regulatory oversight:</p>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>Provincial Regulations</h4>
+                    <p>We comply with provincial financial services regulations across all Canadian provinces where we operate.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>Federal Oversight</h4>
+                    <p>Our operations align with federal financial regulations and consumer protection laws.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>Consumer Protection</h4>
+                    <p>We adhere to consumer protection standards that ensure fair and transparent financial services.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Important:</strong> Wellbeing Financial is not a deposit-taking institution and is not CDIC insured. We do not provide banking services or hold customer funds.</p>
+            </div>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Privacy Compliance</h2>
+            <p>We maintain strict compliance with Canadian privacy laws:</p>
+            
+            <h3>Personal Information Protection and Electronic Documents Act (PIPEDA)</h3>
+            <ul>
+                <li>Transparent collection and use of personal information</li>
+                <li>Consent-based data processing</li>
+                <li>Individual rights to access and correct information</li>
+                <li>Secure handling and storage of personal data</li>
+                <li>Accountability and governance frameworks</li>
+            </ul>
+
+            <h3>Canada's Anti-Spam Legislation (CASL)</h3>
+            <ul>
+                <li>Express consent for commercial electronic messages</li>
+                <li>Clear identification and unsubscribe mechanisms</li>
+                <li>Opt-in marketing communications only</li>
+                <li>Proper record-keeping of consent</li>
+            </ul>
+
+            <h3>Provincial Privacy Laws</h3>
+            <p>We comply with applicable provincial privacy legislation including:</p>
+            <ul>
+                <li>Alberta Personal Information Protection Act (PIPA)</li>
+                <li>British Columbia Personal Information Protection Act (PIPA)</li>
+                <li>Quebec Act Respecting the Protection of Personal Information</li>
+            </ul>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Financial Advisory Disclosure</h2>
+            <div class="highlight-box">
+                <p><strong>Educational Services Only:</strong> Wellbeing Financial provides educational technology and information services. We are not licensed as:</p>
+                <ul>
+                    <li>Financial advisors or investment advisors</li>
+                    <li>Insurance brokers or agents</li>
+                    <li>Mortgage brokers or agents</li>
+                    <li>Credit counselors or debt advisors</li>
+                </ul>
+                <p>All financial advice must be obtained from appropriately licensed professionals.</p>
+            </div>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Third-Party Partnerships</h2>
+            <p>When we connect you with licensed financial professionals:</p>
+            
+            <h3>Mortgage Broker Referrals</h3>
+            <ul>
+                <li>We only refer to properly licensed mortgage brokers</li>
+                <li>All referral fees are disclosed transparently</li>
+                <li>Brokers operate under provincial licensing requirements</li>
+                <li>Independent advice and suitability assessments</li>
+            </ul>
+
+            <h3>Due Diligence</h3>
+            <ul>
+                <li>Verification of professional licenses and credentials</li>
+                <li>Regular review of partner compliance status</li>
+                <li>Monitoring of customer feedback and complaints</li>
+                <li>Termination procedures for non-compliant partners</li>
+            </ul>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Data Security Compliance</h2>
+            <p>Our security practices meet or exceed industry standards:</p>
+            
+            <h3>Working Toward SOC 2 Type II Compliance</h3>
+            <ul>
+                <li>Security controls and monitoring</li>
+                <li>Availability and system performance</li>
+                <li>Processing integrity and accuracy</li>
+                <li>Confidentiality of sensitive information</li>
+                <li>Privacy protection and data handling</li>
+            </ul>
+
+            <h3>Financial Industry Standards</h3>
+            <ul>
+                <li>Bank-level encryption (256-bit SSL/TLS)</li>
+                <li>Multi-factor authentication requirements</li>
+                <li>Regular security audits and assessments</li>
+                <li>Incident response and breach notification procedures</li>
+            </ul>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Complaint Resolution</h2>
+            <p>We maintain a comprehensive complaint resolution process:</p>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>Internal Resolution</h4>
+                    <p>First-level complaint handling through our customer service team with documented procedures and timelines.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>Escalation Process</h4>
+                    <p>Clear escalation path to senior management for unresolved complaints.</p>
+                </div>
+                <div class="compliance-card">
+                    <h4>External Oversight</h4>
+                    <p>Information about relevant regulatory bodies and ombudsman services for further escalation.</p>
+                </div>
+            </div>
+
+            <h3>Contact Information for Complaints</h3>
+            <div class="highlight-box">
+                <p><strong>Customer Service:</strong> Coming Soon</p>
+                <p><strong>Privacy Officer:</strong> privacy@wellbeingfinancial.ai</p>
+                <p><strong>Compliance Officer:</strong> compliance@wellbeingfinancial.ai</p>
+                <p><strong>Mailing Address:</strong> 91 Trail Boulevard, Springwater, Ontario, Canada</p>
+            </div>
+
+            <h3>External Regulatory Bodies</h3>
+            <ul>
+                <li><strong>Privacy Commissioner of Canada:</strong> www.priv.gc.ca | 1-800-282-1376</li>
+                <li><strong>Provincial Consumer Protection Offices</strong></li>
+                <li><strong>Financial Consumer Agency of Canada (FCAC):</strong> www.canada.ca/fcac</li>
+            </ul>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Ongoing Compliance Monitoring</h2>
+            <p>We maintain active compliance monitoring through:</p>
+            <ul>
+                <li>Regular legal and regulatory updates</li>
+                <li>Compliance training for all staff</li>
+                <li>Internal audits and assessments</li>
+                <li>External legal and compliance reviews</li>
+                <li>Continuous improvement of policies and procedures</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

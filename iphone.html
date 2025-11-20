@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellbeing Financial - AI-Powered Financial Wellness - Mobile Optimized Sept 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+/* Modern AI Landing Page */
+
+:root {
+    --primary-color: #0E1026;
+    --primary-02: #1B1D35;
+    --primary-03: #2C2E49;
+    --accent-color: #BC976E;
+    --text-white: #F2F2FA;
+    --text-light-grey: #E4E4F0;
+    --success-color: #78B57E;
+    --warning-color: #FDCE57;
+    --error-color: #F35D6F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.modern-hero-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-hero {
+    position: relative;
+    background: linear-gradient(135deg, 
+        var(--primary-color) 0%, 
+        var(--primary-02) 50%, 
+        var(--primary-03) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.float-element {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, 
+        rgba(188, 151, 110, 0.1), 
+        rgba(188, 151, 110, 0.05));
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.float-element:nth-child(1) { top: 20%; left: 10%; }
+.float-element:nth-child(2) { top: 60%; right: 15%; }
+.float-element:nth-child(3) { bottom: 30%; left: 20%; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(180deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    max-width: 100%;
+    padding: 2rem 0;
+}
+
+.hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: var(--text-light-grey);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disclaimer-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    font-size: 0.8rem;
+    color: var(--text-light-grey);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    width: 100%;
+    max-width: 280px;
+}
+
+.btn-primary-modern {
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    color: var(--primary-color);
+    box-shadow: 0 4px 20px rgba(188, 151, 110, 0.3);
+}
+
+.btn-primary-modern:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(188, 151, 110, 0.4);
+    color: var(--primary-color);
+}
+
+.btn-secondary-modern {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary-modern:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-top: 2rem;
+}
+
+/* Phone Mockup */
+.phone-mockup {
+    position: relative;
+    width: 260px;
+    height: 520px;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 35px;
+    padding: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-screens-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-screen {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-screen.active {
+    opacity: 1;
+}
+
+.app-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.screen-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.orbit-elements {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px dashed rgba(188, 151, 110, 0.3);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+}
+
+.orbit-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    animation: reverseRotate 20s linear infinite;
+    animation-delay: var(--orbit-delay);
+}
+
+.orbit-item:nth-child(1) { top: -25px; left: 50%; margin-left: -25px; }
+.orbit-item:nth-child(2) { top: 50%; right: -25px; margin-top: -25px; }
+.orbit-item:nth-child(3) { bottom: -25px; left: 50%; margin-left: -25px; }
+.orbit-item:nth-child(4) { top: 50%; left: -25px; margin-top: -25px; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes reverseRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* Intro Section */
+.intro-section {
+    background: linear-gradient(180deg, 
+        var(--primary-color) 0%, 
+        var(--primary-02) 100%);
+    padding: 3rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: var(--text-light-grey);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Features Section */
+.features-section {
+    background: var(--primary-02);
+    padding: 3rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.modern-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.modern-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+.feature-icon-modern {
+    margin-bottom: 1.5rem;
+}
+
+.icon-bg {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.modern-feature-card h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.modern-feature-card p {
+    color: var(--text-light-grey);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.feature-accent {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    border-radius: 2px;
+}
+
+/* Products Section */
+.products-section {
+    background: linear-gradient(180deg, 
+        var(--primary-02) 0%, 
+        var(--primary-color) 100%);
+    padding: 3rem 0;
+}
+
+.ai-workflow {
+    margin-top: 2rem;
+}
+
+.workflow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.workflow-icon {
+    margin-bottom: 1rem;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.workflow-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.workflow-content p {
+    color: var(--text-light-grey);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    background: var(--primary-02);
+    padding: 3rem 0;
+}
+
+.two-row-journey {
+    margin-top: 2rem;
+}
+
+.journey-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 280px;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.step-circle.ai-powered {
+    background: linear-gradient(45deg, #78B57E, #90C695);
+}
+
+.step-circle.ongoing {
+    background: linear-gradient(45deg, var(--warning-color), #FDD976);
+    animation: pulse 2s infinite;
+}
+
+.step-content h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    color: var(--text-light-grey);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.ongoing-label {
+    background: var(--warning-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.row-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.connector-badge {
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--primary-color);
+    padding: 3rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1.5rem 1rem;
+}
+
+.stat-number {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-light-grey);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Security Section */
+.security-section {
+    background: linear-gradient(180deg, 
+        var(--primary-color) 0%, 
+        var(--primary-02) 100%);
+    padding: 3rem 0;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.security-feature {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.security-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--success-color), #90C695);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.security-feature h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.security-feature p {
+    color: var(--text-light-grey);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: var(--primary-02);
+    padding: 3rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.testimonial-content {
+    text-align: center;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+    color: var(--text-light-grey);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.author-info h5 {
+    color: var(--text-white);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.author-info span {
+    color: var(--text-light-grey);
+    font-size: 0.85rem;
+}
+
+.savings-badge {
+    background: linear-gradient(45deg, var(--success-color), #90C695);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: linear-gradient(180deg, 
+        var(--primary-02) 0%, 
+        var(--primary-color) 100%);
+    padding: 3rem 0;
+}
+
+.faq-container {
+    margin-top: 2rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-question h4 {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.faq-question i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+
+.faq-answer p {
+    color: var(--text-light-grey);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+    background: linear-gradient(135deg, 
+        var(--primary-02) 0%, 
+        var(--primary-color) 100%);
+    padding: 3rem 0;
+}
+
+.modern-cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.modern-cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(188, 151, 110, 0.1), 
+        transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: var(--text-light-grey);
+    margin: 0 0 1rem 0;
+    max-width: 500px;
+}
+
+.disclaimer-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light-grey);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.cta-buttons-final {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    padding: 3rem 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand {
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: var(--text-light-grey);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.link-column h4 {
+    color: var(--text-white);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.link-column ul {
+    list-style: none;
+}
+
+.link-column li {
+    margin-bottom: 0.5rem;
+}
+
+.link-column a {
+    color: var(--text-light-grey);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.link-column a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.legal-text {
+    margin-bottom: 1.5rem;
+}
+
+.legal-text p {
+    color: var(--text-light-grey);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.legal-text strong {
+    color: var(--text-white);
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-copyright p {
+    color: var(--text-light-grey);
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive improvements for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .btn-modern {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .phone-mockup {
+        width: 220px;
+        height: 440px;
+    }
+    
+    .orbit-elements {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Getting Started Section - WBF App Inspired */
+.getting-started-hero {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.wbf-logo-small {
+    margin-bottom: 1.5rem;
+}
+
+.logo-small {
+    width: 60px;
+    height: auto;
+}
+
+.getting-started-title {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.getting-started-subtitle {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: var(--text-light-grey);
+    margin-bottom: 2rem;
+}
+
+.benefits-showcase-card {
+    background: #2B3A47;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefits-header {
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--text-white);
+}
+
+.benefit-item i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.benefit-item.ai-highlight {
+    font-weight: 700;
+    background: rgba(188, 151, 110, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.benefit-item.ai-highlight i {
+    color: #78B57E;
+}
+
+.assessment-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.assessment-preview-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.assessment-preview-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.assessment-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.assessment-icon.mortgage {
+    background: linear-gradient(45deg, #4F46E5, #6366F1);
+    color: white;
+}
+
+.assessment-icon.personal-loan {
+    background: linear-gradient(45deg, #059669, #10B981);
+    color: white;
+}
+
+.assessment-icon.credit-card {
+    background: linear-gradient(45deg, #DC2626, #EF4444);
+    color: white;
+}
+
+.assessment-icon.equity {
+    background: linear-gradient(45deg, var(--accent-color), #d4af85);
+    color: var(--primary-color);
+}
+
+.assessment-info h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.25rem;
+}
+
+.assessment-info p {
+    color: var(--text-light-grey);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.potential-savings {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--success-color);
+}
+
+.savings-indicator {
+    color: var(--success-color);
+    font-size: 0.6rem;
+}
+
+.cta-section {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.btn-large {
+    padding: 1.25rem 2.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-outline-modern {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-outline-modern:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.login-link {
+    color: var(--text-light-grey);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.login-link a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    color: #d4af85;
+}
+
+/* Additional iPhone-specific optimizations */
+@media (max-width: 414px) {
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+    
+    .ai-badge {
+        font-size: 0.65rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .disclaimer-banner {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+    
+    .getting-started-hero {
+        text-align: center;
+    }
+    
+    .assessment-preview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-large,
+    .btn-outline-modern {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (min-width: 768px) {
+    .assessment-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .getting-started-hero {
+        text-align: center;
+    }
+    
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-large,
+    .btn-outline-modern {
+        width: auto;
+        min-width: 250px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="modern-hero-wrapper">
+        <div class="modern-hero">
+            <div class="hero-background">
+                <div class="floating-elements">
+                    <div class="float-element" style="--delay: 0s"></div>
+                    <div class="float-element" style="--delay: 2s"></div>
+                    <div class="float-element" style="--delay: 4s"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-logo" style="width: 120px; height: 60px; background: linear-gradient(45deg, #BC976E, #d4af85); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #0E1026; font-weight: 800; font-size: 0.8rem; margin: 0 auto 1.5rem;">
+                        WBF LOGO
+                    </div>
+                    <div class="ai-badge">
+                        <i class="fas fa-brain"></i>
+                        <span>YOUR PERSONAL FINANCIAL EXPERT</span>
+                    </div>
+                    <div style="background: #28a745; color: white; padding: 0.5rem 1rem; border-radius: 10px; font-size: 0.8rem; margin-bottom: 1rem; display: inline-block;">
+                        ✓ UPDATED Sept 2, 2024
+                    </div>
+                    <h1 class="hero-title">
+                        Like Having a Financial<br>
+                        <span class="gradient-text">Expert In Your Pocket</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Imagine an AI assistant so powerful it's like having a personal financial expert—constantly 
+                        evaluating every mortgage option, tirelessly seeking ways to save you money, every second of every day.<br><br>
+                        No need to imagine. Experience it today.<br>
+                        Take back control.
+                    </p>
+                    <div class="disclaimer-banner">
+                        <i class="fas fa-info-circle"></i>
+                        <span>For informational purposes only</span>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn-modern btn-primary-modern">
+                            <i class="fab fa-apple"></i>
+                            <span>Download Free</span>
+                        </a>
+                        <a href="#" class="btn-modern btn-secondary-modern">
+                            <i class="fab fa-google-play"></i>
+                            <span>Download Free</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-screens-carousel">
+                                <div class="app-screen active" data-screen="1">
+                                    <img src="screen4.png" alt="WBF App Fourth Screen">
+                                </div>
+                                <div class="app-screen" data-screen="2">
+                                    <img src="screen3.png" alt="WBF App Third Screen">
+                                </div>
+                                <div class="app-screen" data-screen="3">
+                                    <img src="screen2.png" alt="WBF App Second Screen">
+                                </div>
+                                <div class="app-screen" data-screen="4">
+                                    <img src="screen1.png" alt="WBF App Main Screen">
+                                </div>
+                            </div>
+                            <div class="screen-indicators">
+                                <div class="indicator active" data-target="1"></div>
+                                <div class="indicator" data-target="2"></div>
+                                <div class="indicator" data-target="3"></div>
+                                <div class="indicator" data-target="4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orbit-elements">
+                        <div class="orbit-item" style="--orbit-delay: 0s">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="orbit-item" style="--orbit-delay: 1s">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="orbit-item" style="--orbit-delay: 2s">
+                            <i class="fas fa-peace"></i>
+                        </div>
+                        <div class="orbit-item" style="--orbit-delay: 3s">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Your Personal Financial AI <span class="gradient-text">Never Sleeps</span></h2>
+                <p class="section-subtitle">Picture that same AI evaluating all your loans and credit products. It all comes together in one simple dashboard.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="modern-feature-card">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <i class="fas fa-home"></i>
+                        </div>
+                    </div>
+                    <h4>Mortgages</h4>
+                    <p>Find better rates, terms, and refinancing opportunities. Save significant amounts on your largest financial commitment.</p>
+                    <div class="feature-accent"></div>
+                </div>
+                
+                <div class="modern-feature-card">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                    </div>
+                    <h4>Credit Cards</h4>
+                    <p>Discover cards with better rewards, lower rates, and terms that match your spending patterns and financial goals.</p>
+                    <div class="feature-accent"></div>
+                </div>
+                
+                <div class="modern-feature-card">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    <h4>Loans</h4>
+                    <p>Identify personal loans, auto loans, and lines of credit with lower interest rates and more favorable terms.</p>
+                    <div class="feature-accent"></div>
+                </div>
+                
+                <div class="modern-feature-card">
+                    <div class="feature-icon-modern">
+                        <div class="icon-bg">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                    </div>
+                    <h4>Second Mortgages</h4>
+                    <p>Access our exclusive auction marketplace where you set your terms and qualified lenders compete to offer you the best second mortgage rates.</p>
+                    <div class="feature-accent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">How Our <span class="gradient-text">AI Expert</span> Works For You</h2>
+                <p class="section-subtitle">Three core pillars that power your personal financial transformation and ensure you never miss an opportunity.</p>
+            </div>
+            <div class="ai-workflow">
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="workflow-content">
+                        <h4>Constantly Evaluating</h4>
+                        <p>Your AI expert tirelessly analyzes mortgage, loan, and credit options—working around the clock to find ways to save you money.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                    </div>
+                    <div class="workflow-content">
+                        <h4>Simple Dashboard</h4>
+                        <p>Everything comes together in one clear, understandable dashboard. No complexity—just actionable insights presented in plain language.</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <div class="icon-circle">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                    </div>
+                    <div class="workflow-content">
+                        <h4>Tailored to You</h4>
+                        <p>Your AI tailors every analysis to your specific financial situation, goals, and preferences—delivering insights that are truly relevant to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="security-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Your Financial Data is <span class="gradient-text">Protected</span></h2>
+                <p class="section-subtitle">Enterprise-grade security with complete transparency about how we protect your information</p>
+            </div>
+            <div class="security-grid">
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Bank-Level Encryption</h4>
+                    <p>256-bit SSL encryption protects all data transmission and storage, meeting the same standards as major financial institutions.</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h4>Read-Only Access</h4>
+                    <p>We can only view your financial data to provide insights. We cannot move money, make purchases, or access your accounts.</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    <h4>Your Data Stays Yours</h4>
+                    <p>We never sell your personal information. Your financial data is used exclusively to provide you with personalized recommendations.</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Seeking SOC 2 Compliance</h4>
+                    <p>We are working toward SOC 2 compliance to ensure your data meets the highest industry standards for protection and privacy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Real Users, Real <span class="gradient-text">Savings Opportunities</span></h2>
+                <p class="section-subtitle">See how our AI provides continuous monitoring and peace of mind to users</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The AI technology helped me discover refinancing opportunities I never knew existed. Having this intelligent assistant analyze options on my behalf has transformed how I think about my mortgage."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Sarah Chen</h5>
+                                <span>Marketing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"I was surprised by how many better credit card options were available. The AI's analysis helped me understand which cards could better match my spending patterns and lifestyle needs."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Michael Rodriguez</h5>
+                                <span>Small Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The app alerted me to rate changes at just the right time. I appreciate having technology that understands market conditions and helps me make informed decisions about my auto loan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Jennifer Park</h5>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle">Everything you need to know about how Wellbeing Financial works</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How is this different from my bank's app?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your bank's app only shows you their products. Our AI analyzes options across multiple lenders to help you identify potential opportunities for better rates and terms.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is my financial data really safe?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We use bank-level 256-bit encryption and have read-only access to your accounts. We cannot move money or make purchases. We're working toward SOC 2 compliance and never sell your data.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do you make money if the app is free?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you choose to switch to a financial product we recommend, we may receive a referral fee from the mortgage broker, credit card provider, or lender. This never affects our recommendations—we focus on helping you find better opportunities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What types of financial products do you analyze?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We analyze mortgages, refinancing options, credit cards, personal loans, auto loans, and lines of credit. Our AI monitors rates and terms to help identify potential opportunities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How quickly will I see recommendations?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Initial insights typically appear within minutes of connecting your accounts. Our AI then monitors the market and sends you alerts when it identifies potential opportunities worth exploring.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I have to switch to the recommended products?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all. We provide recommendations and insights, but all decisions are yours. You can explore options, compare details, and choose what's best for your situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="final-cta-section">
+        <div class="container">
+            <div class="modern-cta-card">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2 class="cta-title">Take Back <span class="gradient-text">Control</span></h2>
+                        <p class="cta-subtitle">Download the Wellbeing Financial app now and experience having a personal financial expert in your pocket.</p>
+                        <div class="disclaimer-text">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Information provided is for informational purposes only and should not be considered financial advice.</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons-final">
+                        <a href="#" class="btn-modern btn-primary-modern">
+                            <i class="fab fa-apple"></i>
+                            <span>Download Now</span>
+                        </a>
+                        <a href="#" class="btn-modern btn-secondary-modern">
+                            <i class="fab fa-google-play"></i>
+                            <span>Download Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo" style="width: 100px; height: 50px; background: linear-gradient(45deg, #BC976E, #d4af85); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0E1026; font-weight: 800; font-size: 0.7rem; margin: 0 auto 1rem;">
+                        WBF
+                    </div>
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Modern AI Landing Page JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Screen carousel functionality
+    const screens = document.querySelectorAll('.app-screen');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentScreen = 0;
+    
+    function switchScreen(index) {
+        screens.forEach(screen => screen.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        screens[index].classList.add('active');
+        indicators[index].classList.add('active');
+        currentScreen = index;
+    }
+    
+    // Auto-rotate screens
+    setInterval(() => {
+        currentScreen = (currentScreen + 1) % screens.length;
+        switchScreen(currentScreen);
+    }, 4000);
+    
+    // Indicator click handlers
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => switchScreen(index));
+    });
+    
+    // Animated Counter Function
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        counters.forEach(counter => {
+            const target = parseFloat(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                counter.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        });
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                if (entry.target.classList.contains('stats-section')) {
+                    animateCounters();
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections for animations
+    const sections = document.querySelectorAll('.intro-section, .features-section, .products-section, .how-it-works-section, .stats-section, .security-section, .testimonials-section, .faq-section, .final-cta-section');
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+    });
+    
+    // FAQ functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = question.querySelector('i');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close other FAQ items
+                faqQuestions.forEach(otherQuestion => {
+                    const otherItem = otherQuestion.parentElement;
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherIcon = otherQuestion.querySelector('i');
+                    otherAnswer.style.display = 'none';
+                    otherIcon.style.transform = 'rotate(0deg)';
+                });
+                
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Parallax effect for floating elements
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelectorAll('.float-element');
+        const speed = 0.3;
+        
+        parallax.forEach(element => {
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+    });
+    
+    console.log('🚀 Wellbeing Financial iPhone Landing Page Loaded');
+});
+    </script>
+</body>
+</html>

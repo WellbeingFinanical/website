@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .status-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .status-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .status-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .status-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .overall-status {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(40, 167, 69, 0.4);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .status-icon {
+            width: 60px;
+            height: 60px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .status-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .status-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+        .status-description {
+            color: var(--text-light-grey);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .service-name {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .service-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        .status-operational {
+            color: #28a745;
+        }
+        .status-degraded {
+            color: #ffc107;
+        }
+        .status-down {
+            color: #dc3545;
+        }
+        .service-description {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .uptime-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .uptime-fill {
+            height: 100%;
+            background: #28a745;
+            transition: width 0.3s ease;
+        }
+        .uptime-text {
+            font-size: 0.9rem;
+            color: var(--text-light-grey);
+            text-align: center;
+        }
+        .incident-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .incident-section h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .incident {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+        .incident-resolved {
+            border-left-color: #28a745;
+        }
+        .incident-investigating {
+            border-left-color: #ffc107;
+        }
+        .incident-title {
+            color: var(--text-white);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .incident-date {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .incident-description {
+            color: var(--text-light-grey);
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .metric-value {
+            color: var(--accent-color);
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+        .metric-label {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .status-container {
+                padding: 1rem;
+            }
+            .services-grid, .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="status-header">
+            <h1 class="status-title">System Status</h1>
+            <p class="status-subtitle">Real-time status and performance metrics for all Wellbeing Financial services</p>
+        </div>
+
+        <div class="overall-status">
+            <div class="status-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="status-text">All Systems Operational</div>
+            <div class="status-description">All services are running normally with no known issues</div>
+            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light-grey);">
+                Last updated: <span id="last-updated">October 6, 2025 at 2:30 PM EST</span>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">Web Application</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">Main web platform and dashboard</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 99.9%;"></div>
+                </div>
+                <div class="uptime-text">99.9% uptime (30 days)</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">Mobile App</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">iOS and Android mobile applications</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 99.8%;"></div>
+                </div>
+                <div class="uptime-text">99.8% uptime (30 days)</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">AI Analysis Engine</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">Financial analysis and recommendation system</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 99.7%;"></div>
+                </div>
+                <div class="uptime-text">99.7% uptime (30 days)</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">Data Sync</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">Financial account data synchronization</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 99.5%;"></div>
+                </div>
+                <div class="uptime-text">99.5% uptime (30 days)</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">Notifications</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">Push notifications and email alerts</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 99.9%;"></div>
+                </div>
+                <div class="uptime-text">99.9% uptime (30 days)</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-name">Customer Support</div>
+                    <div class="service-status status-operational">
+                        <i class="fas fa-circle"></i>
+                        Operational
+                    </div>
+                </div>
+                <div class="service-description">Help desk and support ticket system</div>
+                <div class="uptime-bar">
+                    <div class="uptime-fill" style="width: 100%;"></div>
+                </div>
+                <div class="uptime-text">100% uptime (30 days)</div>
+            </div>
+        </div>
+
+        <div class="incident-section">
+            <h2>System Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">99.8%</span>
+                    <div class="metric-label">Overall Uptime (30 days)</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">1.2s</span>
+                    <div class="metric-label">Average Response Time</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">0</span>
+                    <div class="metric-label">Active Incidents</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">24/7</span>
+                    <div class="metric-label">Monitoring Coverage</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="incident-section">
+            <h2>Recent Incidents</h2>
+            
+            <div class="incident incident-resolved">
+                <div class="incident-title">Scheduled Maintenance - AI Engine Updates</div>
+                <div class="incident-date">October 1, 2025 - 2:00 AM to 3:00 AM EST</div>
+                <div class="incident-description">
+                    <strong>Resolved:</strong> Scheduled maintenance to deploy AI model improvements completed successfully. All services returned to normal operation. No user data was affected during this maintenance window.
+                </div>
+            </div>
+
+            <div class="incident incident-resolved">
+                <div class="incident-title">Mobile App Sync Delays</div>
+                <div class="incident-date">September 28, 2025 - 4:15 PM to 4:45 PM EST</div>
+                <div class="incident-description">
+                    <strong>Resolved:</strong> Some users experienced delayed data synchronization in the mobile app. The issue was identified as a temporary network congestion problem and has been resolved. All pending syncs completed successfully.
+                </div>
+            </div>
+
+            <div class="incident incident-resolved">
+                <div class="incident-title">Web Dashboard Performance Optimization</div>
+                <div class="incident-date">September 25, 2025 - 1:00 AM to 2:30 AM EST</div>
+                <div class="incident-description">
+                    <strong>Resolved:</strong> Performance optimization updates deployed to improve dashboard loading times. Users may have experienced slightly slower response times during deployment. All optimizations are now active.
+                </div>
+            </div>
+        </div>
+
+        <div class="incident-section">
+            <h2>Maintenance Schedule</h2>
+            <p style="color: var(--text-light-grey); margin-bottom: 2rem;">
+                We perform regular maintenance to ensure optimal performance and security. Scheduled maintenance is typically performed during low-usage hours (1:00 AM - 4:00 AM EST) and users are notified in advance.
+            </p>
+            
+            <div class="incident">
+                <div class="incident-title">No Scheduled Maintenance</div>
+                <div class="incident-date">Next 30 days</div>
+                <div class="incident-description">
+                    No planned maintenance windows are currently scheduled. Any emergency maintenance will be communicated through our status page and user notifications.
+                </div>
+            </div>
+        </div>
+
+        <div class="incident-section">
+            <h2>Subscribe to Updates</h2>
+            <p style="color: var(--text-light-grey); margin-bottom: 1.5rem;">
+                Stay informed about system status, planned maintenance, and incident updates:
+            </p>
+            
+            <div style="background: rgba(188, 151, 110, 0.1); border-radius: 8px; padding: 1.5rem; border-left: 4px solid var(--accent-color);">
+                <p><strong>Email Notifications:</strong> Automatic notifications are sent to all users for major incidents or planned maintenance.</p>
+                <p><strong>In-App Alerts:</strong> Real-time status updates appear in your dashboard when relevant.</p>
+                <p><strong>Status Page:</strong> This page is updated in real-time and provides the most current information.</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Questions about system status?</strong> Contact our support team at 
+                    <a href="mailto:Coming Soon" style="color: var(--accent-color);">Coming Soon</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update the last updated time every 5 minutes
+        function updateLastUpdated() {
+            const now = new Date();
+            const timeString = now.toLocaleString('en-US', {
+                timeZone: 'America/New_York',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                timeZoneName: 'short'
+            });
+            document.getElementById('last-updated').textContent = timeString;
+        }
+        
+        // Update immediately and then every 5 minutes
+        updateLastUpdated();
+        setInterval(updateLastUpdated, 300000);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

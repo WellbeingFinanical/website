@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Centre - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .help-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .help-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+        .help-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .help-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .help-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .help-section h2 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .help-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="help-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="help-header">
+            <h1 class="help-title">Help Centre</h1>
+            <p class="help-subtitle">We're building comprehensive help resources to help you get the most out of Wellbeing Financial</p>
+        </div>
+
+        <div style="text-align: center; padding: 4rem 2rem; background: rgba(188, 151, 110, 0.1); border-radius: 12px; border: 1px solid rgba(188, 151, 110, 0.2);">
+            <div style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                <i class="fas fa-tools" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h2 style="color: var(--accent-color); font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Help Centre Coming Soon</h2>
+            <p style="color: var(--text-light-grey); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                We're building a comprehensive help centre with detailed guides, tutorials, and step-by-step instructions to help you get the most out of Wellbeing Financial.
+            </p>
+            <p style="color: var(--text-white); font-weight: 600; margin-bottom: 2rem;">
+                In the meantime, check our FAQ section for answers to common questions, or experience our AI-powered financial insights.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="faq.html" style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    <i class="fas fa-question-circle"></i>
+                    View FAQ
+                </a>
+                <a href="#" style="background: rgba(255, 255, 255, 0.1); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <i class="fab fa-apple"></i>
+                    Download App
+                </a>
+            </div>
+        </div>
+
+        <div class="help-section">
+            <h2>What We're Building</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-rocket" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">Getting Started Guides</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Step-by-step tutorials for setting up your account and connecting financial institutions</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-brain" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">Understanding AI Insights</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Deep dives into opportunity scores, recommendations, and how our AI works</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-question-circle" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">Troubleshooting Support</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Solutions for common issues and technical problems</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Centre</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

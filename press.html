@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press & Media - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .press-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .press-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .press-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .press-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .press-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .press-section h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .press-section h3 {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem 0;
+        }
+        .press-section p {
+            color: var(--text-light-grey);
+            margin-bottom: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .contact-box {
+            background: rgba(188, 151, 110, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        .press-release {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .press-release h4 {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .press-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .press-release p {
+            color: var(--text-light-grey);
+            margin-bottom: 1rem;
+        }
+        .download-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .download-link:hover {
+            color: #d4af85;
+        }
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .fact-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .fact-number {
+            color: var(--accent-color);
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+        .fact-label {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .press-container {
+                padding: 1rem;
+            }
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="press-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="press-header">
+            <h1 class="press-title">Press & Media</h1>
+            <p class="press-subtitle">Media resources, press releases, and information about Wellbeing Financial's mission to democratize financial expertise through AI</p>
+        </div>
+
+        <div class="press-section">
+            <h2>Media Contact</h2>
+            <div class="contact-box">
+                <p><strong>For all media inquiries, interviews, and press requests:</strong></p>
+                <p><strong>Email:</strong> Coming Soon</p>
+                <p><strong>Response Time:</strong> Within 24 hours for media requests</p>
+                <p><strong>Available For:</strong> Interviews, expert commentary, product demonstrations, and background information</p>
+            </div>
+        </div>
+
+        <div class="press-section">
+            <h2>Company Overview</h2>
+            <p>Wellbeing Financial Corp. is a Canadian fintech company that provides AI-powered financial analysis and educational tools to help Canadians optimize their financial wellness. Our platform acts as a personal financial expert, continuously monitoring the market to identify opportunities for better mortgage rates, credit cards, and loans.</p>
+            
+            <h3>Key Company Facts</h3>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <span class="fact-number">2024</span>
+                    <div class="fact-label">Founded</div>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">Canada</span>
+                    <div class="fact-label">Headquarters</div>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">AI-Powered</span>
+                    <div class="fact-label">Technology Focus</div>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-number">Educational</span>
+                    <div class="fact-label">Service Type</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="press-section">
+            <h2>Recent Press Releases</h2>
+            
+            <div class="press-release">
+                <h4>Wellbeing Financial Launches AI-Powered Financial Optimization Platform for Canadians</h4>
+                <div class="press-date">September 29, 2024</div>
+                <p>Wellbeing Financial Corp. today announced the launch of its revolutionary AI-powered financial platform designed to help Canadians identify opportunities for better mortgage rates, credit cards, and loans. The platform acts as a personal financial expert, working 24/7 to analyze market conditions and provide personalized recommendations.</p>
+                <a href="mailto:Coming Soon?subject=Press Release Request" class="download-link">Request Full Release</a>
+            </div>
+
+            <div class="press-release">
+                <h4>Wellbeing Financial Announces SOC 2 Compliance Initiative</h4>
+                <div class="press-date">October 1, 2024</div>
+                <p>As part of its commitment to data security and privacy, Wellbeing Financial has begun the process of achieving SOC 2 Type II compliance, reinforcing its dedication to protecting Canadian consumers' financial data with enterprise-grade security measures.</p>
+                <a href="mailto:Coming Soon?subject=Press Release Request" class="download-link">Request Full Release</a>
+            </div>
+        </div>
+
+        <div class="press-section">
+            <h2>Executive Bios</h2>
+            <p>Our leadership team brings together expertise in artificial intelligence, financial services, and consumer protection to deliver innovative solutions for Canadian consumers.</p>
+            
+            <h3>Available for Interviews</h3>
+            <p>Our executives are available for interviews on topics including:</p>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li>AI and machine learning in financial services</li>
+                <li>Canadian fintech regulation and compliance</li>
+                <li>Consumer financial wellness and education</li>
+                <li>Data privacy and security in financial technology</li>
+                <li>The future of personal finance management</li>
+            </ul>
+            
+            <div class="contact-box">
+                <p><strong>To schedule interviews or request executive bios:</strong></p>
+                <p>Email: Coming Soon</p>
+                <p>Subject: Interview Request - [Topic/Executive Name]</p>
+            </div>
+        </div>
+
+        <div class="press-section">
+            <h2>Product Information</h2>
+            
+            <h3>What Wellbeing Financial Does</h3>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li><strong>Mortgage Analysis:</strong> AI-powered evaluation of mortgage rates and refinancing opportunities</li>
+                <li><strong>Credit Card Optimization:</strong> Personalized credit card recommendations based on spending patterns</li>
+                <li><strong>Loan Comparisons:</strong> Analysis of personal loans, auto loans, and lines of credit</li>
+                <li><strong>Educational Insights:</strong> Clear, actionable financial information and opportunity scores</li>
+            </ul>
+
+            <h3>What Makes Us Different</h3>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li>AI technology that works 24/7 to monitor financial markets</li>
+                <li>Educational focus rather than sales-driven recommendations</li>
+                <li>Canadian-specific regulatory compliance and market knowledge</li>
+                <li>Bank-level security with read-only access to user accounts</li>
+                <li>Transparent business model with clear disclosure of referral relationships</li>
+            </ul>
+        </div>
+
+        <div class="press-section">
+            <h2>Brand Assets</h2>
+            <p>High-resolution logos, brand guidelines, and marketing materials are available for approved media use.</p>
+            
+            <h3>Available Assets</h3>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li>Company logos (various formats and sizes)</li>
+                <li>Product screenshots and app interfaces</li>
+                <li>Executive headshots</li>
+                <li>Brand style guide and color palette</li>
+                <li>Infographics and data visualizations</li>
+            </ul>
+            
+            <div class="contact-box">
+                <p><strong>To request brand assets:</strong></p>
+                <p>Email: Coming Soon</p>
+                <p>Subject: Brand Assets Request</p>
+                <p>Please include: intended use, publication name, and deadline</p>
+            </div>
+        </div>
+
+        <div class="press-section">
+            <h2>Industry Commentary</h2>
+            <p>Our team is available to provide expert commentary on industry trends and developments, including:</p>
+            
+            <h3>Expert Topics</h3>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li>Canadian mortgage market trends and rate changes</li>
+                <li>AI and automation in personal finance</li>
+                <li>Consumer financial literacy and education</li>
+                <li>Fintech regulation and consumer protection</li>
+                <li>Open banking and financial data aggregation</li>
+                <li>Privacy and security in financial technology</li>
+            </ul>
+            
+            <p>For time-sensitive commentary requests, please call our media line or mark your email as urgent.</p>
+        </div>
+
+        <div class="press-section">
+            <h2>Newsletter & Updates</h2>
+            <p>Media professionals can subscribe to receive:</p>
+            <ul style="color: var(--text-light-grey); padding-left: 2rem;">
+                <li>Press releases and company announcements</li>
+                <li>Industry reports and research findings</li>
+                <li>Executive speaking opportunities</li>
+                <li>Product updates and feature launches</li>
+            </ul>
+            
+            <div class="contact-box">
+                <p><strong>Subscribe to media updates:</strong></p>
+                <p>Email: Coming Soon</p>
+                <p>Subject: Media Newsletter Subscription</p>
+                <p>Include: Name, publication, email, areas of interest</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="status.html">System Status</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

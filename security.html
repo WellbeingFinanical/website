@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0E1026;
+            --accent-color: #BC976E;
+            --text-white: #F2F2FA;
+            --text-light-grey: #E4E4F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--primary-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-white);
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: var(--text-light-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .card-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .card p {
+            color: var(--text-light-grey);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .card ul {
+            color: var(--text-light-grey);
+            padding-left: 1.25rem;
+        }
+        .card li {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+        .card li em {
+            color: var(--accent-color);
+            font-style: normal;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 1.5rem 0 1rem 0;
+            color: var(--accent-color);
+        }
+        
+        .highlight-box {
+            background: rgba(188, 151, 110, 0.1);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .contact-box h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+        .contact-box p {
+            color: var(--text-light-grey);
+            margin-bottom: 0.75rem;
+        }
+        .contact-box strong {
+            color: var(--text-white);
+        }
+        
+        .footer {
+            background: var(--primary-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+            padding: 2rem 0 1rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-brand img {
+            height: 35px;
+            margin-bottom: 0.75rem;
+        }
+        .footer-brand p {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .link-column h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .link-column ul {
+            list-style: none;
+        }
+        .link-column li {
+            margin-bottom: 0.4rem;
+        }
+        .link-column a {
+            color: var(--text-light-grey);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        .link-column a:hover {
+            color: var(--accent-color);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: var(--text-light-grey);
+            font-size: 0.8rem;
+            margin: 0.25rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .grid,
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="header">
+            <h1>Security & Data Protection</h1>
+            <p>Your financial data security is our top priority. Learn about the comprehensive measures we take to protect your information.</p>
+        </div>
+
+        <h2 class="section-title">Core Security Measures</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Bank-Level Encryption</h3>
+                <p>We use the same encryption standards as major financial institutions:</p>
+                <ul>
+                    <li>256-bit SSL/TLS encryption for all data transmission</li>
+                    <li>AES-256 encryption for data at rest</li>
+                    <li>End-to-end encryption for sensitive operations</li>
+                    <li>Perfect Forward Secrecy (PFS) protocols</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-eye-slash"></i>
+                </div>
+                <h3>Read-Only Access</h3>
+                <p>Your peace of mind is paramount:</p>
+                <ul>
+                    <li>We can only view your financial data</li>
+                    <li>Cannot move money or make transactions</li>
+                    <li>Cannot access login credentials</li>
+                    <li>No ability to modify account settings</li>
+                    <li>Zero transactional capabilities</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <h3>Access Controls</h3>
+                <p>Strict controls limit who can access what:</p>
+                <ul>
+                    <li>Role-based access control (RBAC)</li>
+                    <li>Principle of least privilege</li>
+                    <li>Multi-factor authentication required</li>
+                    <li>Regular access reviews and audits</li>
+                    <li>Immediate access revocation capabilities</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Infrastructure Security</h3>
+                <p>Secure cloud infrastructure with industry-standard protection:</p>
+                <ul>
+                    <li>Cloud hosting with tier-1 providers (AWS/Azure/GCP)</li>
+                    <li>Built-in DDoS protection from cloud providers</li>
+                    <li>Network security groups and access controls</li>
+                    <li>HTTPS enforcement across all services</li>
+                    <li>Regular security updates and patches</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Data Protection</h3>
+                <p>Your data is protected with industry-standard practices:</p>
+                <ul>
+                    <li>Encrypted backups with secure cloud storage</li>
+                    <li>Data minimization - we only collect what we need</li>
+                    <li>Secure data disposal when you disconnect accounts</li>
+                    <li>Canadian data residency (data stays in Canada)</li>
+                    <li><em>Advanced DLP systems planned for production scale</em></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Security Reviews</h3>
+                <p>Ongoing security validation and improvement:</p>
+                <ul>
+                    <li>Internal security assessments and code reviews</li>
+                    <li>Automated vulnerability scanning</li>
+                    <li>Regular dependency and library updates</li>
+                    <li>Security best practices in development</li>
+                    <li><em>Third-party security assessments planned as we scale</em></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h2 class="section-title" style="margin-top: 0;">Privacy & Compliance</h2>
+            <div class="compliance-grid">
+                <div>
+                    <h3>Privacy Protection</h3>
+                    <p>We follow Canadian privacy principles and are building toward full regulatory compliance:</p>
+                    <ul>
+                        <li>Data minimization - we only collect what we need</li>
+                        <li>Clear consent and transparency about data use</li>
+                        <li>User control over their data</li>
+                        <li>Secure handling and storage of personal information</li>
+                        <li>No selling or sharing of personal data</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Security Standards</h3>
+                    <p><strong>We implement industry-standard security practices:</strong></p>
+                    <ul>
+                        <li>Encryption of data in transit and at rest</li>
+                        <li>Regular security updates and monitoring</li>
+                        <li>Access controls and authentication</li>
+                        <li>Incident response procedures</li>
+                        <li>Continuous security improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>Questions About Security?</h2>
+            <p>If you have questions about our security practices or want to report a security concern:</p>
+            <p><strong>Security & Privacy:</strong> Coming Soon</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Centre</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user.</p>
+                <p><strong>Privacy Notice:</strong> Personal information may be processed outside Canada. While we implement comprehensive security measures, no transmission method is 100% secure.</p>
+                <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>

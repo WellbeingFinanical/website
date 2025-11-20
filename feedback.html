@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .feedback-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .feedback-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feedback-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .feedback-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .feedback-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feedback-section h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .feedback-form {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-white);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light-grey);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(188, 151, 110, 0.2);
+        }
+        .submit-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: #d4af85;
+        }
+        .feedback-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feedback-type {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .feedback-type:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-color);
+        }
+        .feedback-type.selected {
+            background: rgba(188, 151, 110, 0.1);
+            border-color: var(--accent-color);
+        }
+        .feedback-type-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .feedback-type-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+        .feedback-type h3 {
+            color: var(--text-white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .feedback-type p {
+            color: var(--text-light-grey);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .contact-info {
+            background: rgba(188, 151, 110, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 1rem;
+            }
+            .feedback-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="feedback-header">
+            <h1 class="feedback-title">Share Your Feedback</h1>
+            <p class="feedback-subtitle">Help us improve Wellbeing Financial by sharing your thoughts, suggestions, and experiences</p>
+        </div>
+
+        <div style="text-align: center; padding: 4rem 2rem; background: rgba(188, 151, 110, 0.1); border-radius: 12px; border: 1px solid rgba(188, 151, 110, 0.2);">
+            <div style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                <i class="fas fa-comment-dots" style="font-size: 2rem; color: white;"></i>
+            </div>
+            <h2 style="color: var(--accent-color); font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Feedback System Coming Soon</h2>
+            <p style="color: var(--text-light-grey); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                We're building a comprehensive feedback system that will make it easy to share your thoughts, report issues, and suggest improvements.
+            </p>
+            <p style="color: var(--text-white); font-weight: 600; margin-bottom: 2rem;">
+                In the meantime, experience the power of our AI-powered financial insights.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    <i class="fab fa-apple"></i>
+                    Download for iOS
+                </a>
+                <a href="#" style="background: var(--accent-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s ease;">
+                    <i class="fab fa-google-play"></i>
+                    Download for Android
+                </a>
+            </div>
+        </div>
+
+        <div class="feedback-section" style="margin-top: 4rem;">
+            <h2>What We're Building</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-lightbulb" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">Feature Requests</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Easy way to suggest new features and improvements</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-bug" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">Bug Reports</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Quick reporting of technical issues with priority tracking</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fas fa-heart" style="color: white;"></i>
+                    </div>
+                    <h3 style="color: var(--text-white); margin-bottom: 0.5rem;">General Feedback</h3>
+                    <p style="color: var(--text-light-grey); font-size: 0.9rem; margin: 0;">Share your experience and help us improve</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="feedback-section">
+            <h2>Privacy Notice</h2>
+            <p style="color: var(--text-light-grey);">
+                Your feedback helps us improve our service. Any personal information you provide will be used solely for the purpose of addressing your feedback and improving our platform. We follow the same privacy standards for feedback as outlined in our <a href="privacy-policy.html" style="color: var(--accent-color);">Privacy Policy</a>. We will not use your feedback for marketing purposes unless you explicitly consent.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Centre</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectFeedbackType(element, type) {
+            // Remove selected class from all feedback types
+            document.querySelectorAll('.feedback-type').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked element
+            element.classList.add('selected');
+            
+            // Update the select dropdown
+            document.getElementById('feedback-type').value = type;
+        }
+
+        function submitFeedback(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const feedbackData = {
+                type: formData.get('feedback-type'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                platform: formData.get('platform')
+            };
+            
+            // Create email content
+            const emailSubject = `Feedback: ${feedbackData.subject}`;
+            const emailBody = `Feedback Type: ${feedbackData.type}
+${feedbackData.email ? `Email: ${feedbackData.email}` : 'Email: Not provided'}
+${feedbackData.platform ? `Platform: ${feedbackData.platform}` : ''}
+
+Message:
+${feedbackData.message}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:jakewatson@wellbeingfinancial.ai?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert('Thank you for your feedback! Your email client should open with a pre-filled message. Please send it to complete your feedback submission.');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

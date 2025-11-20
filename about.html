@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .about-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .about-section {
+            margin-bottom: 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .about-section h2 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .about-section h3 {
+            color: var(--text-white);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+        }
+        .about-section p {
+            color: var(--text-light-grey);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .mission-card {
+            background: rgba(188, 151, 110, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(188, 151, 110, 0.2);
+        }
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .mission-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .mission-card h4 {
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .mission-card p {
+            color: var(--text-light-grey);
+            font-size: 1rem;
+        }
+        .values-list {
+            list-style: none;
+            padding: 0;
+        }
+        .values-list li {
+            background: rgba(255, 255, 255, 0.03);
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .values-list li strong {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        
+        /* Scroll animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 1rem;
+            }
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="about-header">
+            <h1 class="about-title">About Wellbeing Financial</h1>
+            <p class="about-subtitle">Empowering Canadians with AI-driven financial insights to make better decisions about their money</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p class="fade-in-section">Our name says it all: <strong>Wellbeing Financial.</strong> We didn't choose "optimization" or "maximization" or any other cold, corporate term. We chose <em>wellbeing</em> because your financial health should support your life, not consume it.</p>
+            
+            <p class="fade-in-section"><strong>That's why our promise is simple but powerful:</strong> "We relentlessly pursue your financial wellbeing." Not just better rates or smarter products, but genuine <em>financial</em> wellbeing in everything we do.</p>
+            
+            <p class="fade-in-section">For too long, Canadians have had to become <strong>financial experts</strong> just to get a fair deal. You're expected to research dozens of lenders, compare complex terms, and somehow know when better rates become available—<em>all while managing your actual life.</em></p>
+            
+            <p class="fade-in-section"><strong>That stops now.</strong></p>
+            
+            <p class="fade-in-section">Wellbeing Financial built an AI assistant so powerful it's like having a <strong>personal financial expert in your pocket</strong>—constantly evaluating every mortgage option, tirelessly seeking ways to save you money, every second of every day. Now, picture that same AI evaluating <em>all</em> your loans and credit products at home. And it all comes together in <strong>one simple dashboard</strong>, presented in clear, understandable language.</p>
+            
+            <h3 class="fade-in-section">We do the work you don't have time for:</h3>
+            <p class="fade-in-section">While you're focused on your life, our AI relentlessly monitors the entire Canadian financial market. It tracks rate changes across mortgages, personal loans, auto loans, and credit cards. It learns your situation and preferences. It continuously analyzes thousands of financial products at a volume and frequency that wouldn't be possible to do manually.</p>
+            
+            <p class="fade-in-section"><strong>The result?</strong> You get the financial insights that were once available only to people with personal wealth managers, except it's automated, always on, and designed for everyday Canadians.</p>
+            
+            <p class="fade-in-section">We're not just another app showing you the same rates everyone else sees. We're building the intelligent system that helps you avoid leaving money on the table because you didn't know a better option existed.</p>
+            
+            <p class="fade-in-section">No need to imagine, experience it today.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>AI-Powered Intelligence</h4>
+                    <p>Leverage cutting-edge artificial intelligence to analyze financial markets and identify personalized opportunities.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Democratize Expertise</h4>
+                    <p>Make sophisticated financial analysis accessible to all Canadians, regardless of their wealth or background.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Customer-First Always</h4>
+                    <p>We work exclusively for you, not the lenders. Our AI evaluates every financial product purely based on what's best for your situation, regardless of which institution offers it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>What We Do</h2>
+            <p>Wellbeing Financial provides educational technology that helps Canadians understand and compare their financial options. Our AI-powered platform continuously monitors the financial landscape to identify potential opportunities for:</p>
+            
+            <h3>Mortgage Optimization</h3>
+            <p>We analyze mortgage rates, terms, and refinancing opportunities across every lender in Canada. Our AI doesn't play favorites—it finds you the best deal, regardless of which bank offers it.</p>
+            
+            <h3>Credit Card Analysis</h3>
+            <p>Our system evaluates every credit card offer across all institutions, comparing rewards programs and terms based purely on what maximizes value for your specific spending patterns.</p>
+            
+            <h3>Loan Comparisons</h3>
+            <p>Whether it's personal loans, auto loans, or lines of credit, we treat every lender as just another source of capital. Our recommendations are based solely on who offers you the best terms, not who pays us the most.</p>
+            
+            <h3>Educational Insights</h3>
+            <p>We transform complex financial information into clear, actionable insights that help you make informed decisions about your financial future.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Values</h2>
+            <ul class="values-list">
+                <li><strong>Privacy First:</strong> Your financial data is sacred. We use bank-level encryption and never sell your personal information. Your data is used exclusively to provide you with personalized insights.</li>
+                <li><strong>Education Over Sales:</strong> We believe in empowering you with knowledge rather than pushing products. Our recommendations are based on your needs, not commission structures.</li>
+                <li><strong>Customer-First Always:</strong> Our only loyalty is to you. We evaluate every financial product purely on its merit for your situation, treating all lenders equally. To us, they're just different sources of capital, and we'll always recommend whoever offers you the best deal.</li>
+                <li><strong>Innovation:</strong> We continuously invest in improving our AI technology to provide you with more accurate, timely, and relevant financial insights.</li>
+                <li><strong>Canadian Focus:</strong> We understand the unique aspects of the Canadian financial system and regulatory environment, ensuring our insights are relevant and compliant.</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Commitment</h2>
+            <p>We're committed to being more than just a technology company. We relentlessly pursue your financial wellbeing in a market designed to favor lenders, dedicated to:</p>
+            
+            <h3>Relentless Innovation</h3>
+            <p>We invest heavily in research and development to ensure our AI technology stays at the forefront of financial analysis, relentlessly working to provide you with better, more accurate insights that improve your financial wellbeing.</p>
+            
+            <h3>Regulatory Compliance</h3>
+            <p>We operate under strict Canadian financial and privacy regulations, ensuring your protection and our accountability. We're working toward SOC 2 Type II compliance and maintain the highest standards of data security.</p>
+            
+            <h3>Customer-Centric Approach</h3>
+            <p>Every feature we build, every partnership we form, and every decision we make is guided by one question: "How does this benefit our users?" Your financial wellness is our primary concern.</p>
+            
+            <h3>Financial Education</h3>
+            <p>We believe that informed consumers make better financial decisions. That's why we focus on education and empowerment rather than just providing recommendations.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Looking Forward</h2>
+            <p>The financial landscape is constantly evolving, and so are we. Our vision is to become Canada's most trusted AI-powered financial wellness platform, helping millions of Canadians optimize their financial lives.</p>
+            
+            <p>We're continuously expanding our capabilities, exploring new financial products and services to analyze, and developing more sophisticated AI models to provide even better insights. Our goal is simple: to ensure that no Canadian ever misses out on a financial opportunity that could improve their life.</p>
+            
+            <p>Join us on this journey toward better financial wellness. Your future self will thank you.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Centre</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in-section');
+        
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>

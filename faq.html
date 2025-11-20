@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Wellbeing Financial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0E1026;
+            --primary-02: #1B1D35;
+            --primary-03: #2C2E49;
+            --accent-color: #BC976E;
+            --text-white: #F2F2FA;
+            --text-light-grey: #E4E4F0;
+            --success-color: #78B57E;
+            --warning-color: #FDCE57;
+            --error-color: #F35D6F;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--primary-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+        .faq-subtitle {
+            color: var(--text-light-grey);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-section h2 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        .faq-question:hover {
+            background: rgba(188, 151, 110, 0.1);
+        }
+        .faq-question h3 {
+            color: var(--text-white);
+            font-weight: 600;
+            margin: 0;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .faq-question:hover h3 {
+            color: var(--accent-color);
+        }
+        .faq-question i {
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            opacity: 1;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer p {
+            color: var(--text-light-grey);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4af85;
+        }
+        .footer {
+            background: var(--primary-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0 1rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        .footer-brand p {
+            color: var(--text-light-grey);
+            font-size: 0.95rem;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .link-column h4 {
+            color: var(--text-white);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .link-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .link-column li {
+            margin-bottom: 0.5rem;
+        }
+        .link-column a {
+            color: var(--text-light-grey);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .link-column a:hover {
+            color: var(--accent-color);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+        .legal-text {
+            margin-bottom: 2rem;
+        }
+        .legal-text p {
+            color: var(--text-light-grey);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+        .footer-copyright {
+            text-align: center;
+        }
+        .footer-copyright p {
+            color: var(--text-light-grey);
+            font-size: 0.8rem;
+            margin: 0.5rem 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        @media (max-width: 768px) {
+            .faq-container {
+                padding: 1rem;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        
+        <div class="faq-header">
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <p class="faq-subtitle">Find answers to the most common questions about Wellbeing Financial and our AI-powered financial insights platform</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How does Wellbeing Financial work?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Wellbeing Financial uses AI technology to relentlessly monitor the Canadian financial market and analyze your current financial products. Our AI evaluates mortgage rates, credit cards, personal loans, and other financial products 24/7, identifying opportunities where you could save money or get better terms. We present these insights through easy-to-understand opportunity scores and recommendations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What makes Wellbeing Financial different from other financial apps?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We work exclusively for you, not the lenders. Our AI evaluates every financial product purely based on what's best for your situation, regardless of which institution offers it. To us, lenders are just different sources of capital, and we'll always recommend whoever offers you the best deal. We don't play favorites with any financial institution.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I get started with Wellbeing Financial?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Download the Wellbeing Financial app from the App Store or Google Play Store. Create your profile with basic information, then securely connect your financial accounts using our bank-level encrypted connection. Our AI will begin analyzing your situation immediately and provide personalized recommendations within hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How much does Wellbeing Financial cost?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Wellbeing Financial app is free to use. When you choose to switch to a financial product we recommend, we may receive a referral fee from the mortgage broker, credit card provider, or lender. This never affects our recommendations—our only loyalty is to you, and we evaluate every product purely on its merit for your situation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Privacy & Security</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is my financial data safe with Wellbeing Financial?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We use bank-level 256-bit SSL encryption and have read-only access to your accounts. We cannot move money, make purchases, or access your login credentials. Your data is stored in secure Canadian servers with multiple layers of protection. We're working toward SOC 2 Type II compliance and never sell your personal information.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What information do you access from my accounts?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We access account balances, transaction history, current rates, and terms for your existing financial products (mortgages, credit cards, loans). This allows our AI to understand your current situation and identify better opportunities. We only view this information—we cannot make changes, transfers, or payments.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I disconnect my accounts at any time?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. You can disconnect any or all of your accounts at any time through the app settings. If you disconnect accounts, we'll no longer receive updates about those financial products, but you can reconnect them later if desired.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>AI Insights & Recommendations</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What are opportunity scores and how do they work?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Opportunity scores (1-100) help you quickly identify which financial products could benefit you most. Scores 90-100 indicate excellent opportunities with significant savings potential. 70-89 are good opportunities worth investigating. 50-69 show moderate benefits. Below 50 indicates limited benefit compared to your current situation. Our AI calculates these scores based on your current rates, credit profile, and market conditions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How often are insights updated?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our AI monitors the market continuously and updates insights as rates and terms change. You'll receive notifications when significant new opportunities arise or when market conditions change in ways that could benefit you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How accurate are the savings estimates?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our savings estimates are based on current market rates and your specific financial profile. While we strive for accuracy, final rates and terms depend on lender approval processes, credit checks, and other factors. We recommend using our estimates as a starting point for your financial decisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Using the Platform</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What types of financial products does Wellbeing Financial analyze?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We analyze mortgages, personal loans, auto loans, lines of credit (HELOC), and credit cards across all major Canadian financial institutions. Our AI treats every lender as just another source of capital, evaluating products purely on what's best for your specific situation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can Wellbeing Financial help me apply for new financial products?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We provide insights and recommendations, and can connect you with licensed mortgage brokers and financial professionals who can help with applications. While our platform is educational, we work with qualified partners who can provide personalized advice and assistance with the application process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Does Wellbeing Financial provide financial advice?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Wellbeing Financial provides educational technology and analysis for informational purposes only. We are not a financial advisor, broker, or investment company. All financial decisions remain solely with you. For personalized financial advice, we can connect you with licensed professionals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Technical Support</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>The app isn't working properly. What should I do?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>First, make sure you have the latest version of the app. Try closing and reopening the app, or restarting your device. Check your internet connection. If problems persist, our comprehensive support system will be available soon to help with technical issues.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>I can't connect my bank account. What's wrong?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Ensure you're using the correct login credentials for your bank. Some financial institutions require additional security steps. Check if your bank is supported in our institution list. If you continue having issues, our support team can provide specific guidance for your financial institution.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I contact customer support?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We're building a comprehensive customer support system that will be available soon. In the meantime, you can share feedback through our feedback system (coming soon) or check our Help Centre for additional guidance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="Logos/WBF - KO - To Size.png" alt="Wellbeing Financial" class="footer-logo">
+                    <p>We relentlessly pursue your financial wellbeing</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="security.html">Security</a></li>
+                            <li><a href="compliance.html">Compliance</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Centre</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-text">
+                    <p><strong>Important Disclosure:</strong> Wellbeing Financial is not a financial advisor, broker, or investment company. We provide technology-based analysis and recommendations for informational purposes only. All financial decisions remain solely with the user. Past performance does not guarantee future results.</p>
+                    <p><strong>Licensing:</strong> Wellbeing Financial operates under applicable provincial and federal regulations. We are not CDIC insured and do not provide banking services.</p>
+                    <p><strong>Data Security:</strong> All user data is encrypted using bank-level 256-bit SSL encryption. We are working toward SOC 2 Type II compliance and undergo regular security audits.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Wellbeing Financial Corp. All rights reserved.</p>
+                    <p>Apple and the Apple logo are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
